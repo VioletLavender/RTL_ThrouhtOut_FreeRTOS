@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\SysTick_DelayMs.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\SysTick_DelayMs.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Oct 27 17:00:42 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Oct 27 17:45:35 2020
 <BR><P>
 <H3>Maximum Stack Usage =        236 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -1386,13 +1386,13 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[12e]"></a>Knl_CodeCpy_Isr</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, kernel.o(i.Knl_CodeCpy_Isr))
-<BR><BR>[Called By]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_Set_TxPowerLevel_Isr
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
+<LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_Set_TxPowerLevel_Isr
 <LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
 <LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_ReleaseConnID_Isr
 <LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLWTR_Isr
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_Rand
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_CCM_Manual
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpC1
 </UL>
 
@@ -1480,7 +1480,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[111]"></a>Knl_MemCpy_Isr</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, kernel.o(i.Knl_MemCpy_Isr))
-<BR><BR>[Called By]<UL><LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Tmr_FIFO_ADVrpt
+<BR><BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
+<LI><a href="#[16a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Tmr_FIFO_ADVrpt
 <LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Msg_CTRL_PKT_Isr
 <LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_Buffer_To_FIFO_Isr
 <LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLWTR_Rx2Hc
@@ -1491,7 +1492,6 @@ Global Symbols
 <LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_Start_encryption
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_CCM_Manual
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ECHC_LE_Ctrl_Pkt
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpS1
 </UL>
 
@@ -1629,6 +1629,7 @@ Global Symbols
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Knl_MemCpy_Isr
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GetMsgBlk_Isr
 <LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ErrorEntry
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rafael_reset_phy_fsm_Isr
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_WTR_intOn
 <LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_WTR_intOff
 <LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_WTR_EnChk
@@ -1659,7 +1660,6 @@ Global Symbols
 <LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLTimer_TmrRefUpd_Isr
 <LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Ble_EC_Chk_Isr
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setChannel_BLE
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rafael_reset_phy_fsm_Isr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_GPIO_Isr
 </UL>
@@ -1708,6 +1708,7 @@ Global Symbols
 <LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreeMsgBlks_Isr
 <LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FreeMsgBlk_Isr
 <LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CheckMsgBlk_L2_wSizeUsed_Isr
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rafael_reset_phy_fsm_Isr
 <LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_TxFIFO_ADVaddr_set
 <LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_TxFIFO_ADVData_set
 <LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_TxAutoAckOff
@@ -1724,7 +1725,6 @@ Global Symbols
 <LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLWTR_MDset
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLWTR_Buffer_wAck_Isr
 <LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLWTRFIFOGet_Isr
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rafael_reset_phy_fsm_Isr
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_GPIO_Isr
 </UL>
@@ -2975,6 +2975,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPIx_WriteByte
 </UL>
 <BR>[Called By]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_GPIO_Isr
+<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rafael_reset_phy_fsm_Isr
 <LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_WTR_intOn
 <LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_WTR_intOff
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RF_TxAutoAckOn
@@ -2993,7 +2994,6 @@ Global Symbols
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpAES_inInv
 <LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpAES_En
 <LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setChannel_BLE
-<LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rafael_reset_phy_fsm_Isr
 </UL>
 
 <P><STRONG><a name="[19d]"></a>SPI_2BYT_SetTx_Isr</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, porting_spi.o(i.SPI_2BYT_SetTx_Isr))
@@ -3613,8 +3613,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Prcss_OPCODE_ATT_Execute_Write_Request
 </UL>
 
-<P><STRONG><a name="[20]"></a>main</STRONG> (Thumb, 156 bytes, Stack size 24 bytes, main.o(i.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 236<LI>Call Chain = main &rArr; RF_Open &rArr; RF_Init &rArr; Ble_SW_Init &rArr; RF_Tmr_Periodic_initial &rArr; RF_Tmr_Periodic_set_ISR &rArr; SPI_PDMA_SetTx &rArr; SPIx_DMA_TxData &rArr; SPIx_DMA_Configure &rArr; DMA_DeInit &rArr; __aeabi_uidivmod
+<P><STRONG><a name="[20]"></a>main</STRONG> (Thumb, 138 bytes, Stack size 16 bytes, main.o(i.main))
+<BR><BR>[Stack]<UL><LI>Max Depth = 228<LI>Call Chain = main &rArr; RF_Open &rArr; RF_Init &rArr; Ble_SW_Init &rArr; RF_Tmr_Periodic_initial &rArr; RF_Tmr_Periodic_set_ISR &rArr; SPI_PDMA_SetTx &rArr; SPIx_DMA_TxData &rArr; SPIx_DMA_Configure &rArr; DMA_DeInit &rArr; __aeabi_uidivmod
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskStartScheduler
 <LI><a href="#[1d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setBLE_BleDeviceAddr
@@ -3853,9 +3853,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_1BYT_SetTx_Isr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_CCM_Manual
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpS1
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpC1
 </UL>
@@ -3880,9 +3880,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_PDMA_SetTx
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_CCM_Manual
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpS1
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpC1
 </UL>
@@ -3892,9 +3892,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_PDMA_SetTx
 </UL>
-<BR>[Called By]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
+<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LL_smp_SKD_IV_genIn
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_CCM_Manual
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpC1
 </UL>
 
@@ -3905,12 +3905,12 @@ Global Symbols
 <LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_1BYT_SetTx_Isr
 <LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_1BYT_SetRx_Isr
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_Start_encryption
+<BR>[Called By]<UL><LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_Start_encryption
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_Rand
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_Long_term_key_req_reply
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LLEC_LE_CCM_Manual
 <LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ECHC_LE_Ctrl_Pkt
-<LI><a href="#[7c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMEC_LE_SMP_Key_Gen
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpS1
 <LI><a href="#[1a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpC1
 </UL>

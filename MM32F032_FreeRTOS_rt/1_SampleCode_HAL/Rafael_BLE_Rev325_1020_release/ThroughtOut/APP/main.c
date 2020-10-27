@@ -45,24 +45,7 @@
 #include "FreeRTOS.h"
 #include "task.h"
 
-#define TASK1_STACK_SIZE          1280
-#define TASK1_PRIORITY            1
 
-/************************************************
-函数名称 ： vAppTask1
-功    能 ： 应用任务1
-参    数 ： pvParameters --- 可选参数
-返 回 值 ： 无
-作    者 ： strongerHuang
-*************************************************/
-void vAppTask1(void *pvParameters)
-{
-    for (;;)
-    {
-        BSP_LED1_TOGGLE();
-        vTaskDelay(100);
-    }
-}
 
 /* Private typedef ----------------------------------------------------------*/
 /* Private define -----------------------------------------------------------*/
@@ -75,9 +58,14 @@ void vAppTask1(void *pvParameters)
 /* Exported variables -------------------------------------------------------*/
 /* Exported function prototypes ---------------------------------------------*/
 
+#define TASK1_STACK_SIZE          1280
+#define TASK1_PRIORITY            1
 
 //#define _PWR_test
+BLE_Addr_Param bleAddrParam;
 extern void BleApp_Main(void);
+extern BleStackStatus Ble_Kernel_Root(void);
+extern void BleApp_Init(void);
 
 // use UART for TRSPX
 #if (BLE_DEMO==DEMO_TRSPX_UART_SLAVE)
@@ -121,9 +109,8 @@ void RF_Open()
 }
 
 
-void rf_Stack_task()
+void rf_Stack_task(void *pvParameters)
 {
-
     for (;;)
     {
         if (Ble_Kernel_Root() == BLESTACK_STATUS_FREE)
@@ -147,18 +134,12 @@ void AppTaskCreate(void)
 ******************************************************************************/
 int main(void)
 {
-    /* Init SysTick timer 1ms for SysTick_DelayMs */
-
-    BLE_Addr_Param bleAddrParam;
-
-    extern BleStackStatus Ble_Kernel_Root(void);
-
-    extern void BleApp_Init(void);
     delay_init();
-    BSP_LED_Init();
-    NVIC_SetPriority(EXTI4_15_IRQn, 0);  //set GPIO_INT highest priority
 
-    /* Config UART1 with parameter(115200, N, 8, 1) for printf */
+    BSP_LED_Init();
+
+    NVIC_SetPriority(EXTI4_15_IRQn, 0);
+
     UARTx_Configure(DEBUG_UART, 115200, UART_WordLength_8b, UART_StopBits_1,  \
                     UART_Parity_No);
 
@@ -166,6 +147,7 @@ int main(void)
     RF_Open();
     SysTick_DelayMs(2000);
 
+    /*get chipID*/
     printf("-------------------\n");
     printf("  BLE Start.....\n");
     printf("-------------------\n");
@@ -181,16 +163,16 @@ int main(void)
     bleAddrParam.addr[4] = 0x55;
     bleAddrParam.addr[5] = 0x56;
     setBLE_BleDeviceAddr(&bleAddrParam);
-    /* Config UART1 with parameter(115200, N, 8, 1) for printf */
-    UARTx_Configure(DEBUG_UART, 115200, UART_WordLength_8b, UART_StopBits_1, UART_Parity_No);
+
     printf("MM32TEST");
 
-
+    /*INIT ADV*/
     BleApp_Init();
 
+    /*FreeRTOS Creat task*/
     AppTaskCreate();
 
-    /* 3、开启任务 */
+    /* start task*/
     vTaskStartScheduler();
 
     return 0;
